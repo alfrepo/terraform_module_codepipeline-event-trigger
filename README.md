@@ -2,6 +2,14 @@
 
 Terraform module to trigger the codepipeline via events, instead of polling.
 
+AWS now disables code-pipelines after 30 days of inactivity, if they use polling.
+https://repost.aws/questions/QUQpm_cExCSxqc5qiWNj8xmw/aws-codepipeline-is-disabling-polling-in-inactive-pipelines
+
+By doing so they force users to migrate to using events.
+For using events you need to do much more, than just enabling a flag and providing the code repo.
+
+This module makeas it easy to configure your code pipeline to be triggered upon git push.
+
 ## Usage
 
 Refer as in https://developer.hashicorp.com/terraform/language/modules/sources
